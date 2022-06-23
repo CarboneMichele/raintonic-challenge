@@ -1,1 +1,17 @@
-<p>game-card works!</p>
+<div class="apc-gameCard">
+    <div class="apc-gameCard__thumbnail">
+        <img [src]="game.thumbnail" [alt]="game.title" />
+    </div>
+    <div class="apc-gameCard__infoWrapper">
+        <div class="apc-gameCard__titleWrap">
+            <p class="apc-gameCard__title">{{ game.title }}</p>
+            <mat-icon
+                (click)="toggleFavorite(game.isFavorite)"
+                class="apc-gameCard__favoriteBtn"
+                [ngClass]="{ '-isFavorite': game.isFavorite }"
+                >{{ game.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon
+            >
+        </div>
+        <apc-rating-field [rating]="game.rating" (rateChanged)="updateRating($event)"></apc-rating-field>
+    </div>
+</div>

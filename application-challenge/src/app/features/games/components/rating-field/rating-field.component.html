@@ -1,1 +1,12 @@
-<p>rating-field works!</p>
+<div class="apc-ratingField">
+    <p class="apc-ratingField__label">Rating:</p>
+    <div class="apc-ratingField__starsWrap">
+        <mat-icon
+            class="apc-ratingField__star"
+            *ngFor="let star of ratingStars"
+            (click)="setRating(star.id)"
+            [ngClass]="{ '-isActive': star.isActive }"
+            >{{ star.isActive ? 'star' : 'star_border' }}</mat-icon
+        >
+    </div>
+</div>

@@ -1,4 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* stylelint-disable selector-pseudo-element-no-unknown */
+@import "./assets/scss/colors";
 
-html, body { height: 100%; }
-body { font-family: Roboto, "Helvetica Neue", sans-serif; margin: 0; }
+html,
+body {
+    min-height: 100vh;
+}
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+p {
+    margin: 0;
+}
+::ng-deep {
+
+    .mat-simple-snackbar,
+    .mat-simple-snackbar-action {
+        color: $brand-01;
+
+        .mat-button .mat-button-focus-overlay {
+            opacity: 0.12 !important;
+        }
+    }
+    .mat-snack-bar-container.success-snackbar {
+        background-color: $support-01;
+    }
+    .mat-snack-bar-container.error-snackbar {
+        background-color: $support-02;
+    }
+}

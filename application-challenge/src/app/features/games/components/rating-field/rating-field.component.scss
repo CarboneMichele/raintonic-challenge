@@ -1,0 +1,28 @@
+@import "./../../../../../assets/scss/colors";
+
+.apc-ratingField {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+
+    &__label {
+        margin: 2px 0 0 0;
+    }
+    &__starsWrap {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    &__star {
+        color: $support-03;
+        opacity: 0.6;
+        transition: opacity 0.2s linear;
+        cursor: pointer;
+
+        &:hover, &.-isActive {
+            opacity: 1;
+        }
+    }
+}
+

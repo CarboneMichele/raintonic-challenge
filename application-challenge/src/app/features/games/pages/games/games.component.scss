@@ -1,0 +1,44 @@
+@import "./../../../../../assets/scss/colors";
+@import "./../../../../../assets/scss/mixins";
+
+.apc-page {
+    @include bg-gradient-main;
+    min-height: 100vh;
+    padding: 30px 16px;
+
+    &__content {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    &__gamesList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        margin: 0 auto;
+        gap: 20px;
+    }
+    &__emptyGamesSection {
+        opacity: 0.5;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        &Message {
+            line-height: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .qcm-page {
+
+        &__gamesList {
+            padding-top: 112px;
+        }
+    }
+}
