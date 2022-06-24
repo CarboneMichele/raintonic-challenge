@@ -16,20 +16,3 @@ body {
 p {
     margin: 0;
 }
-::ng-deep {
-
-    .mat-simple-snackbar,
-    .mat-simple-snackbar-action {
-        color: $brand-01;
-
-        .mat-button .mat-button-focus-overlay {
-            opacity: 0.12 !important;
-        }
-    }
-    .mat-snack-bar-container.success-snackbar {
-        background-color: $support-01;
-    }
-    .mat-snack-bar-container.error-snackbar {
-        background-color: $support-02;
-    }
-}

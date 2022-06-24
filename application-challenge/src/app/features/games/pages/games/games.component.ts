@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Game } from '../../models/game.model';
+
+import { NotificationsService } from 'src/app/core/services/notifications.service';
 import { GamesService } from '../../services/games.service';
+
+import { Game } from '../../models/game.model';
+import { Constants } from 'src/app/core/constants/constants';
 
 @Component({
     selector: 'apc-games',
@@ -13,7 +17,7 @@ export class GamesComponent implements OnInit, OnDestroy {
     public gamesSubscription!: Subscription;
     public games!: Game[];
 
-    constructor(private gamesService: GamesService) {}
+    constructor(private gamesService: GamesService, private notificationsService: NotificationsService) {}
 
     //
     // ─── LIFECYCLE METHODS ──────────────────────────────────────────────────────────
@@ -41,6 +45,7 @@ export class GamesComponent implements OnInit, OnDestroy {
         const updatedGames = [...this.games];
         updatedGames[updatedGameIndex] = updatedGame;
         this.gamesService.updateGamesList(updatedGames);
+        this.notificationsService.openSnackBar(Constants.SUCCESS_EDIT, undefined, false);
     }
 
     trackById(index: number, item: Game): number {

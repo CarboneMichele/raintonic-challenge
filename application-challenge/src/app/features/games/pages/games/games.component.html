@@ -1,11 +1,11 @@
 <div class="apc-page">
     <div class="apc-page__content">
-        <div class="apc-page__gamesList">
+        <div class="apc-page__gamesList" *ngIf="games.length">
             <div class="card" *ngFor="let game of games; trackBy: trackById">
                 <apc-game-card [game]="game" (gameEdit)="updateGames($event)"></apc-game-card>
             </div>
         </div>
-        <div class="apc-page__emptyGamesSection">
+        <div class="apc-page__emptyGamesSection" *ngIf="!games.length">
             <p class="apc-page__emptyGamesSectionMessage">0 games found</p>
         </div>
     </div>
